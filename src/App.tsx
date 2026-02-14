@@ -17,7 +17,7 @@ import POList from './features/po/POList'
 import PODetail from './features/po/PODetail'
 import AdminPanel from './features/admin/AdminPanel'
 
-const basename = import.meta.env.BASE_URL || '/'
+const basename = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '') || '/'
 
 function App() {
   useEffect(() => {
