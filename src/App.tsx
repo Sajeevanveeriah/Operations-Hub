@@ -17,6 +17,8 @@ import POList from './features/po/POList'
 import PODetail from './features/po/PODetail'
 import AdminPanel from './features/admin/AdminPanel'
 
+const basename = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '') || '/'
+
 function App() {
   useEffect(() => {
     // Initialize storage and seed demo data on first load
@@ -24,7 +26,7 @@ function App() {
   }, [])
 
   return (
-    <Router basename="/Operations-Hub">
+    <Router basename={basename}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
